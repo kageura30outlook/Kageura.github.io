@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portofolio</title>
+    <title>My portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Kagaura, a passionate coder.</p>
+        <p>Hi, I'm Kageura, a passionate coder. In this site I will lightly introduce some of the projects I have worked on so far.</p>
     </header>
 
     <section id="projects">
@@ -17,18 +17,18 @@
 
         <!-- Project 1 -->
         <div class="project">
-            <h3>Project 1:Blocky Platformer</h3>
-            <p>This is a game I made this using Unity</p>
-            <li><a href="https://play.unity.com/en/games/daa2884f-5a11-44b1-8852-2b0fb21a2819/blocky-platformer">Project 1</a> -This is a link to play the project.</li>
-            <li><a href="https://docs.google.com/presentation/d/1mSyNCH8dszb5yEEnmCqjdr9iXXWQ_ljnzRV9yR7Vj4A/edit?usp=sharing">Project 1</a> - This is a link to a presentation I made before for this project. Please take a look after you try playing the game.</li>
+            <h3>Project 1: Blocky Platformer</h3>
+            <p>This is a game I made using Unity.</p>
+            <ul>
+                <li><a href="https://play.unity.com/en/games/daa2884f-5a11-44b1-8852-2b0fb21a2819/blocky-platformer">UnityPlay</a> - This is a link to play the project.</li>
+                <li><a href="https://docs.google.com/presentation/d/1mSyNCH8dszb5yEEnmCqjdr9iXXWQ_ljnzRV9yR7Vj4A/edit?usp=sharing">Google Slide</a> - This is a link to a presentation I made before for this project. Please take a look after you try playing the game.</li>
+            </ul>
         </div>
 
         <!-- Project 2 -->
         <div class="project">
             <h3>Project 2: Scraping with Python</h3>
-            <!-- Project Explanation -->
-            <p>This is a project where I wanted to scrape a website time to time to get a certain information and send it to my gmail.</p>
-            <!-- Code explanation -->
+            <p>This is a project where I wanted to scrape a website time to time to get certain information and send it to my gmail.</p>
             <h4>Code Explanation</h4>
             <p>Here’s the code snippet from the project:</p>
             <pre><code>
@@ -47,7 +47,6 @@
                         return False
                 
                 
-                
                 def job():
                 
                     url = "https://game8.jp/splatoon3/480736#hl_9"
@@ -62,15 +61,13 @@
                     for t in name:
                         ret.append(t.text)
                 
-                
-                
                     new_file = []
-                
                 
                     for text in ret:
                         if "Ver." in text:
                             new_file.append(text)
                             
+
                     directory = "./prev_spla"
                 
                     if not os.path.exists(directory):
@@ -85,9 +82,8 @@
                     with open(prev_file_path) as prev_f:
                         prev_file = json.load(prev_f)
                 
-                
                     with open(file_path, "w") as f:
-                        json.dump(new_file, f,indent=2, ensure_ascii=False)
+                        json.dump(new_file, f, indent=2, ensure_ascii=False)
 
                     if compare_files(prev_file, new_file):
                         print("変更点はありません")
@@ -97,7 +93,7 @@
                         #gmail.send_test_email("変更点があります！！！！！！")
                 
             </code></pre>
-            <p>This code is where I compare a old scraped data and a new scraped data and see if there were any changes made between them. I used "urllib.request","BeutifulSoup" and "Json" libraries to help me with this.</p>
+            <p>This code is where I compare old scraped data and new scraped data and see if there were any changes made between them. I used "urllib.request", "BeautifulSoup", and "Json" libraries to help me with this.</p>
             <pre><code>
                 import schedule
                 import time
@@ -109,7 +105,7 @@
                     schedule.run_pending()
                     time.sleep(1)
             </code></pre>
-            <p>This code is to control the time to run the previous code; "tmp" the main code.</p>
+            <p>This code is to control the time to run the previous code; "tmp" is the main code.</p>
             <pre><code>
                 import smtplib, ssl
                 from email.mime.text import MIMEText
@@ -143,8 +139,8 @@
                   server.login(gmail.account, gmail.password)
                   server.send_message(msg)                
             </code></pre>
-            <p>This code is to send a gmail to my account using another different created acount.</p>
-            <code><pre>
+            <p>This code is to send a gmail to my account using another different created account.</p>
+            <pre><code>
                 [
                 "\nVer.7.0.0\nサイドオーダー、新シーズン\n",
                 "\nVer.6.1.0ナメロウ改修、武器調整",
@@ -174,21 +170,23 @@
               ]
             </code></pre>
             <p>The above is the result Json file that will be sent to my gmail account.</p>
-            <p>From this project I leant how to use libraries properly and how to research to write codes. I also gained experience in CSS and HTTML.</p>
+            <p>From this project, I learned how to use libraries properly and how to research to write codes. I also gained experience in CSS and HTML.</p>
             
         </div>
 
         <div class="project">
-            <h3>Project 3:Project Euler</h3>
+            <h3>Project 3: Project Euler</h3>
             <p>Project Euler is a website where you can get free challenges to tackle on using programming.</p>
-            <p>The code bellow is my answer to one of the questions in Project Euler</p>
-            <p>This is the link to the question</p>
-            <li><a href="https://projecteuler.net/problem=45">Project 1</a></li>
-            <code><pre>
+            <p>The code below is my answer to one of the questions in Project Euler.</p>
+            <p>This is the link to the question:</p>
+            <ul>
+                <li><a href="https://projecteuler.net/problem=45">Project Euler</a></li>
+            </ul>
+            <pre><code>
                 num = 1
                 yousei = 0
                 answer1 = 0
-                answer2 =0
+                answer2 = 0
                 answer3 = 0
                 check1 = [285]
                 check2 = [165]
@@ -211,7 +209,7 @@
                     answer = answer - 1
                     answer3 = num3 * answer
                     return(answer3)
-                for i in range (1, 100000):
+                for i in range(1, 100000):
                     num = num + 1
                     num1 = num1 + 1
                     num2 = num2 + 1
@@ -219,7 +217,7 @@
                     check1.append(tri(num1))
                     check2.append(pent(num2))
                     check3.append(hex(num3))
-                for r in range (1,100000):
+                for r in range(1,100000):
                     print(r)
                     if check1[r] in check2:
                         print("Rinn")
@@ -227,28 +225,30 @@
                             print(check1[r])
                             break    
             </code></pre>
-            <p>For this code I made three functions to make it easier for me. In the code I first calculated all triangular,pentagonal and hexagonal numbers up to one hundred thousand, then used the "in" fuction to search if there is the same triangular number in the two lists.</p>
-            <p>With this question, I learnt how to check things by thinking the code in separate parts. For example, while I was writing the code I test runned it several times but it didn't work. To solve this I separated the codes into chunks and checked each of them individualy. It turned out that the hexagonal function was wrong and once I fixed it the code worked.</p>
-            <p>In Project Euler I tackled other questions such as number 5,10,31 and so on with my programming teacher outside school. This is because I think Project Euler is a good place to train my algorithms, logical thinking and explaination skills.</p>
+            <p>For this code, I made three functions to make it easier for me. In the code, I first calculated all triangular, pentagonal, and hexagonal numbers up to one hundred thousand, then used the "in" function to check if there is the same triangular number in the two lists.</p>
+            <p>With this question, I learned how to check things by thinking the code in separate parts. For example, while I was writing the code I test ran it several times, but it didn't work. To solve this, I separated the code into chunks and checked each of them individually. It turned out that the hexagonal function was wrong, and once I fixed it, the code worked.</p>
+            <p>In Project Euler, I tackled other questions such as number 5, 10, 31, and so on with my programming teacher outside school. This is because I think Project Euler is a good place to train my algorithms, logical thinking, and explanation skills.</p>
         </div>
         <div class="project">
-            <h3>Project 4:Scratch</h3>
-            <p>The last project I am going to show you here is on scratch.</p>
+            <h3>Project 4: Scratch</h3>
+            <p>The last project I am going to show you here is on Scratch.</p>
             <p>Here is the link:</p>
-            <li><a href="https://scratch.mit.edu/projects/1046515492/">Project 1</a> -This is a link to play the project.</li>
-            <p>It might look too simple, but the algorithm itself is pretty good so if I change the area of generation I can easily make the maze larger. I tried this before but there is a problem:because scratch's clone limit it 300 I can't really make it bigger on scratch.</p>
-            <p>But I was still successful in making a rathar fancy algorithm with Scratch</p>
+            <ul>
+                <li><a href="https://scratch.mit.edu/projects/1046515492/">Scratch Maze Maker</a> - This is a link to play the project.</li>
+            </ul>
+            <p>It might look too simple, but the algorithm itself is pretty good, so if I change the area of generation, I can easily make the maze larger. I tried this before, but there is a problem: because Scratch's clone limit is 300, I can't really make it bigger on Scratch.</p>
+            <p>But I was still successful in making a rather fancy algorithm with Scratch.</p>
         </div>
         <div class="conclusion">
             <h3>Conclusion</h3>
-            <p>These codes are the highlights of this year to me but still, I am proud with all my projects I made. </p>
-            <p>As a young coder I have aspirations in solving real-world problems, to accomplish this I will continiously strive to expand my skills and build impactful projects using technologies.</p>
+            <p>These codes are the highlights of this year, but still, I am proud of all the projects I made.</p>
+            <p>As a young coder, I have aspirations in solving real-world problems. To accomplish this, I will continuously strive to expand my skills and build impactful projects using technologies.</p>
         </div>
         
     </section>
 
     <footer>
-        <p>Find me on <a href="">GitHub</a> and <a href="https://www.linkedin.com/in/yourname">LinkedIn</a>.</p>
+        <p>Find me on <a href="https://github.com/kageura30outlook" target="_blank">my GitHub profile</a>.</p>
     </footer>
 </body>
 </html>
