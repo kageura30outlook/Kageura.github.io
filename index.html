@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portofolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I'm Kagaura, a passionate coder.</p>
+    </header>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="project">
+            <h3>Project 1:Blocky Platformer</h3>
+            <p>This is a game I made this using Unity</p>
+            <li><a href="https://play.unity.com/en/games/daa2884f-5a11-44b1-8852-2b0fb21a2819/blocky-platformer">Project 1</a> -This is a link to play the project.</li>
+            <li><a href="https://docs.google.com/presentation/d/1mSyNCH8dszb5yEEnmCqjdr9iXXWQ_ljnzRV9yR7Vj4A/edit?usp=sharing">Project 1</a> - This is a link to a presentation I made before for this project. Please take a look after you try playing the game.</li>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <h3>Project 2: Scraping with Python</h3>
+            <!-- Project Explanation -->
+            <p>This is a project where I wanted to scrape a website time to time to get a certain information and send it to my gmail.</p>
+            <!-- Code explanation -->
+            <h4>Code Explanation</h4>
+            <p>Here’s the code snippet from the project:</p>
+            <pre><code>
+                import urllib.request
+                from bs4 import BeautifulSoup 
+                import json
+                import os
+                #import gmail_send as gmail
+                
+                
+                # ファイルを比較する関数
+                def compare_files(prev_file, new_file):
+                    if prev_file == new_file:
+                        return True
+                    else:
+                        return False
+                
+                
+                
+                def job():
+                
+                    url = "https://game8.jp/splatoon3/480736#hl_9"
+                
+                    res = urllib.request.urlopen(url)
+                
+                    soup = BeautifulSoup(res, "html.parser") 
+                
+                    name = soup.find_all("td")
+                
+                    ret = []
+                    for t in name:
+                        ret.append(t.text)
+                
+                
+                
+                    new_file = []
+                
+                
+                    for text in ret:
+                        if "Ver." in text:
+                            new_file.append(text)
+                            
+                    directory = "./prev_spla"
+                
+                    if not os.path.exists(directory):
+                        os.makedirs(directory)
+                
+                    filename = "prev_file.json"
+                    file_path = os.path.join(directory, filename)
+                
+                    prev_file_path = "prev_spla/prev_file.json"
+                    prev_file = ""
+                
+                    with open(prev_file_path) as prev_f:
+                        prev_file = json.load(prev_f)
+                
+                
+                    with open(file_path, "w") as f:
+                        json.dump(new_file, f,indent=2, ensure_ascii=False)
+
+                    if compare_files(prev_file, new_file):
+                        print("変更点はありません")
+                        #gmail.send_test_email("変更点はありません")
+                    else:
+                        print("変更点があります")
+                        #gmail.send_test_email("変更点があります！！！！！！")
+                
+            </code></pre>
+            <p>This code is where I compare a old scraped data and a new scraped data and see if there were any changes made between them. I used "urllib.request","BeutifulSoup" and "Json" libraries to help me with this.</p>
+            <pre><code>
+                import schedule
+                import time
+                import tmp
+                
+                schedule.every(5).seconds.do(tmp.job)
+                
+                while True:
+                    schedule.run_pending()
+                    time.sleep(1)
+            </code></pre>
+            <p>This code is to control the time to run the previous code; "tmp" the main code.</p>
+            <pre><code>
+                import smtplib, ssl
+                from email.mime.text import MIMEText
+                #上で作成したpyファイルから、account情報を読み込みます
+                import my_gmail_account as gmail
+                
+                # 送信先のアドレスを登録します
+                send_address = ""
+                
+                # メインの関数になります
+                def send_test_email(text):
+                  msg = make_mime_text(
+                    mail_to = send_address,
+                    subject = text,
+                    body = text
+                  )
+                  send_gmail(msg)
+                
+                # 件名、送信先アドレス、本文を渡す関数です
+                def make_mime_text(mail_to, subject, body):
+                  msg = MIMEText(body, "html")
+                  msg["Subject"] = subject
+                  msg["To"] = mail_to
+                  msg["From"] = gmail.account
+                  return msg
+                
+                # smtp経由でメール送信する関数です
+                def send_gmail(msg):
+                  server = smtplib.SMTP_SSL("smtp.gmail.com", 465, context = ssl.create_default_context())
+                  server.set_debuglevel(0)
+                  server.login(gmail.account, gmail.password)
+                  server.send_message(msg)                
+            </code></pre>
+            <p>This code is to send a gmail to my account using another different created acount.</p>
+            <code><pre>
+                [
+                "\nVer.7.0.0\nサイドオーダー、新シーズン\n",
+                "\nVer.6.1.0ナメロウ改修、武器調整",
+                "\nVer.6.0.2スミナガ・ビッグラン修正",
+                "\nVer.6.0.1バグ・ビッグラン修正",
+                "\nVer.6.0.0\n新シーズン、武器調整",
+                "\nVer.5.2.0すりみ連合amiibo対応",
+                "\nVer.5.1.0マヒマヒ改修、武器調整",
+                "\nVer.5.0.1DLC特典追加、バグ修正",
+                "\nVer.5.0.0\n新シーズン、武器調整",
+                "\nVer.4.1.0武器調整、バグ修正",
+                "\nVer.4.0.2バグ修正",
+                "\nVer.4.0.1ボトル・キャンプのバグ修正",
+                "\nVer.4.0.0\n新シーズン、武器調整",
+                "\nVer.3.1.1コラボフェス準備、バグ修正",
+                "\nVer.3.1.0武器調整、バグ修正",
+                "\nVer.3.0.1バグ修正",
+                "\nVer.3.0.0\n新シーズン、武器調整",
+                "\nVer.2.1.1バグ修正",
+                "\nVer.2.1.0武器調整、バグ修正",
+                "\nVer.2.0.1ローラー・フデのバグ修正",
+                "\nVer.2.0.0\n新シーズン、武器調整",
+                "\nVer.1.2.1ホコのバグ修正",
+                "\nVer.1.2.0武器調整、バグ修正",
+                "\nVer.1.1.2通信関係の修正",
+                "\nVer.1.1.1バグ修正"
+              ]
+            </code></pre>
+            <p>The above is the result Json file that will be sent to my gmail account.</p>
+            <p>From this project I leant how to use libraries properly and how to research to write codes. I also gained experience in CSS and HTTML.</p>
+            
+        </div>
+
+        <div class="project">
+            <h3>Project 3:Project Euler</h3>
+            <p>Project Euler is a website where you can get free challenges to tackle on using programming.</p>
+            <p>The code bellow is my answer to one of the questions in Project Euler</p>
+            <p>This is the link to the question</p>
+            <li><a href="https://projecteuler.net/problem=45">Project 1</a></li>
+            <code><pre>
+                num = 1
+                yousei = 0
+                answer1 = 0
+                answer2 =0
+                answer3 = 0
+                check1 = [285]
+                check2 = [165]
+                check3 = [143]
+                num1 = 285
+                num2 = 165
+                num3 = 143
+                def tri(num1):
+                    answer = num1 + 1
+                    answer = answer * num1
+                    answer1 = answer/2
+                    return(answer1)
+                def pent(num2):
+                    answer = num2 * 3 - 1
+                    answer = answer * num2
+                    answer2 = answer/2
+                    return(answer2)
+                def hex(num3):
+                    answer = num3 * 2
+                    answer = answer - 1
+                    answer3 = num3 * answer
+                    return(answer3)
+                for i in range (1, 100000):
+                    num = num + 1
+                    num1 = num1 + 1
+                    num2 = num2 + 1
+                    num3 = num3 + 1
+                    check1.append(tri(num1))
+                    check2.append(pent(num2))
+                    check3.append(hex(num3))
+                for r in range (1,100000):
+                    print(r)
+                    if check1[r] in check2:
+                        print("Rinn")
+                        if check1[r] in check3:
+                            print(check1[r])
+                            break    
+            </code></pre>
+            <p>For this code I made three functions to make it easier for me. In the code I first calculated all triangular,pentagonal and hexagonal numbers up to one hundred thousand, then used the "in" fuction to search if there is the same triangular number in the two lists.</p>
+            <p>With this question, I learnt how to check things by thinking the code in separate parts. For example, while I was writing the code I test runned it several times but it didn't work. To solve this I separated the codes into chunks and checked each of them individualy. It turned out that the hexagonal function was wrong and once I fixed it the code worked.</p>
+            <p>In Project Euler I tackled other questions such as number 5,10,31 and so on with my programming teacher outside school. This is because I think Project Euler is a good place to train my algorithms, logical thinking and explaination skills.</p>
+        </div>
+        <div class="project">
+            <h3>Project 4:Scratch</h3>
+            <p>The last project I am going to show you here is on scratch.</p>
+            <p>Here is the link:</p>
+            <li><a href="https://scratch.mit.edu/projects/1046515492/">Project 1</a> -This is a link to play the project.</li>
+            <p>It might look too simple, but the algorithm itself is pretty good so if I change the area of generation I can easily make the maze larger. I tried this before but there is a problem:because scratch's clone limit it 300 I can't really make it bigger on scratch.</p>
+            <p>But I was still successful in making a rathar fancy algorithm with Scratch</p>
+        </div>
+        <div class="conclusion">
+            <h3>Conclusion</h3>
+            <p>These codes are the highlights of this year to me but still, I am proud with all my projects I made. </p>
+            <p>As a young coder I have aspirations in solving real-world problems, to accomplish this I will continiously strive to expand my skills and build impactful projects using technologies.</p>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>Find me on <a href="">GitHub</a> and <a href="https://www.linkedin.com/in/yourname">LinkedIn</a>.</p>
+    </footer>
+</body>
+</html>
