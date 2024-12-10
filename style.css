@@ -81,8 +81,8 @@ h2 {
 }
 
 .project pre {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
+    background-color: #2C3E50;
+    border: 1px solid #ECF0F1;
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
@@ -94,7 +94,7 @@ h2 {
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 1rem;
-    color: #555;
+    color: #ECF0F1;
 }
 
 /* Conclusion section */
