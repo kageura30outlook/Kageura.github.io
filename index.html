@@ -41,116 +41,37 @@
             <li><a href="https://github.com/kageura30outlook/kageura30outlook-python_scraping_files">GitHub</a></li>
             <p>Here, I am going to show the important codes </p>
             <pre><code>
-                import urllib.request
-                from bs4 import BeautifulSoup 
-                import json
-                import os
-                #import gmail_send as gmail
-                
-                
-                # function that compares the files
+                # code that compares the files
                 def compare_files(prev_file, new_file):
                     if prev_file == new_file:
                         return True
                     else:
                         return False
-                
+            </code></pre>
+            <pre><code>
                 
                 def job():
-                
-                    url = "https://game8.jp/splatoon3/480736#hl_9"
-                
-                    res = urllib.request.urlopen(url)
-                
-                    soup = BeautifulSoup(res, "html.parser") 
-                
-                    name = soup.find_all("td")
-                
-                    ret = []
-                    for t in name:
-                        ret.append(t.text)
-                
-                    new_file = []
-                
-                    for text in ret:
-                        if "Ver." in text:
-                            new_file.append(text)
-                            
 
-                    directory = "./prev_spla"
-                
-                    if not os.path.exists(directory):
-                        os.makedirs(directory)
-                
-                    filename = "prev_file.json"
-                    file_path = os.path.join(directory, filename)
-                
-                    prev_file_path = "prev_spla/prev_file.json"
-                    prev_file = ""
-                
-                    with open(prev_file_path) as prev_f:
-                        prev_file = json.load(prev_f)
-                
-                    with open(file_path, "w") as f:
-                        json.dump(new_file, f, indent=2, ensure_ascii=False)
-
-                    if compare_files(prev_file, new_file):
-                        print("There is no change")
-                        #gmail.send_test_email("There is no change")
-                    else:
-                        print("There is a change")
-                        #gmail.send_test_email("There is a change")
-                
+                url = "https://game8.jp/splatoon3/480736#hl_9"
+            
+                res = urllib.request.urlopen(url)
+            
+                soup = BeautifulSoup(res, "html.parser") 
+                #a code that picks up all data that the class is "td"(table data)
+                name = soup.find_all("td")
             </code></pre>
-            <p>The code above compares old and new scraped data to identify any changes. I use 'urllib.request', 'BeautifulSoup', and 'json' libraries to help with this process.</p>
             <pre><code>
-                import schedule
-                import time
-                import tmp
-                
-                schedule.every(5).seconds.do(tmp.job)
-                
-                while True:
-                    schedule.run_pending()
-                    time.sleep(1)
-            </code></pre>
-            <p>The code above controls the execution timing of the previous code, with 'tmp' being the main functionality.</p>
-            <pre><code>
-                import smtplib, ssl
-                from email.mime.text import MIMEText
-                #install account information
-                import my_gmail_account as gmail
-                
-                # setting send_address
-                send_address = ""
-                
-                # main function
-                def send_test_email(text):
-                  msg = make_mime_text(
-                    mail_to = send_address,
-                    subject = text,
-                    body = text
-                  )
-                  send_gmail(msg)
-                
-                # function sending the mail
-                def make_mime_text(mail_to, subject, body):
-                  msg = MIMEText(body, "html")
-                  msg["Subject"] = subject
-                  msg["To"] = mail_to
-                  msg["From"] = gmail.account
-                  return msg
-                
-                # function that sends email throught smp
-                def send_gmail(msg):
-                  server = smtplib.SMTP_SSL("smtp.gmail.com", 465, context = ssl.create_default_context())
-                  server.set_debuglevel(0)
-                  server.login(gmail.account, gmail.password)
-                  server.send_message(msg)                
-            </code></pre>
-            <p>The above code sends a gmail to my account using another different created account.</p>
+                if compare_files(prev_file, new_file):
+                print("There are no change")
+                #gmail.send_test_email("There are no change")
+            else:
+                print("There is a change")
+                #gmail.send_test_email("There is a change")
+            </code><pre>
+            <h4>Problems</h4>
+            <p>'awoihwh</p>
             <h4>What I Learnt</h4>
-            <p>From this project, I learned how to use libraries properly and how to research to write codes. I also got a deeper understanding of CSS and html.</p>
+            <p></p>
             
         </div>
 
