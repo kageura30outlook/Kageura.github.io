@@ -25,7 +25,7 @@
                 <li><a href="https://docs.google.com/presentation/d/1mSyNCH8dszb5yEEnmCqjdr9iXXWQ_ljnzRV9yR7Vj4A/edit?usp=sharing">Google Slide</a> - This is a link to a presentation for this project. Please take a look after you play the game.</li>    
             </ul>
             <h4>Problems I Faced</h4>
-            <p>During the creation of the project, there was a bug that I couldn't solve: the character did a super jump when touching the wall. Another promblem was that the project was hard to play at the start.</p>
+            <p>During the creation of the project, there was a bug that I couldn't solve: the character did a super jump when touching the wall. Another promblem was that it was hard to get use to controling the character at the start.</p>
             <h4>How I Solved The Problems</h4>
             <p>For the "super jump" problem I made a red ceiling above the stage. By doing this when the character "super jumps", the character will hit ceiling and die. This will stop the character from skipping obstacles of the game using the bug. For the other problem I place blue tutorial arrows to lead the player through the first few obstacles. By doing this, the player,hopefully, get how to play the game properly.</p>
             <h4>What I Learnt</h4>
@@ -39,7 +39,7 @@
             <h4>Code Explanation</h4>
             <p>Here’s the whole code for the project:</p>
             <li><a href="https://github.com/kageura30outlook/kageura30outlook-python_scraping_files">GitHub</a></li>
-            <p>Here, I am going to show the important codes </p>
+            <p>Here, I am going to show you the important codes.</p>
             <pre><code>
                 def compare_files(prev_file, new_file):
                     if prev_file == new_file:
@@ -72,7 +72,7 @@
             <h4>Problems I faced</h4>
             <p>When I started writing the code I junked everything into one file. This made it harder for me to wite the code. Another problem, was that I couldn't really think of a way to search the data in the site.</p>     
             <h4>How Solved The Problems</h4>
-            <p>To solve the problem I separated the code into separtate files and funtions and linked them together with messages and variables. For the other problem I made two steps for scraping the specific data.</p>
+            <p>To solve the problem I separated the code into separate files and linked them together with messages and variables. For the other problem I made two steps for scraping the specific data.</p>
             <h4>What I Learnt</h4>
             <p>From this project I learnt to create different jobs for different code so it is easier to turn the algorithm into code. Similarly, I learnt to take small steps to accomplish a big goal and not try to accomplish the goal with one big step.</p>
         </div>
@@ -80,62 +80,55 @@
         <div class="project">
             <h3>Project 3: Project Euler</h3>
             <p>Project Euler is a website where you can get free challenges to tackle on using programming.</p>
-            <p>The code below is my answer to one of the questions in Project Euler.</p>
-            <p>This is the link to the questions and the code answer for the questions:</p>
+            <h4>Code Explanation</h4>
+            <p>This is the link to the questions and the answers for the questions:</p>
             <ul>
                 <li><a href="https://github.com/kageura30outlook/kageura30outlook-projecteuler_files">GitHub</a></li>
                 <li><a href="https://projecteuler.net/archives">Project Euler</a></li>
             </ul>
-            <h4>Code Explanation</h4>
+            <p>Here, I am going to show you a answer to question 45 in the website.</p>            
             <p>This is the link to the question 45:</p>
             <li><a href="https://projecteuler.net/problem=45">Project Euler</a></li>
-            <p>Here’s the code snippet of my answer for question 45:</p>
+            <p>Here, I am going to show you the important codes:</p>
             <pre><code>
-                num = 1
-                answer1 = 0
-                answer2 = 0
-                answer3 = 0
-                check1 = [285]
-                check2 = [165]
-                check3 = [143]
-                num1 = 285
-                num2 = 165
-                num3 = 143
                 def tri(num1):
                     answer = num1 + 1
                     answer = answer * num1
                     answer1 = answer/2
                     return(answer1)
-                def pent(num2):
-                    answer = num2 * 3 - 1
-                    answer = answer * num2
-                    answer2 = answer/2
-                    return(answer2)
-                def hex(num3):
-                    answer = num3 * 2
-                    answer = answer - 1
-                    answer3 = num3 * answer
-                    return(answer3)
-                for i in range(1, 100000):
-                    num = num + 1
-                    num1 = num1 + 1
-                    num2 = num2 + 1
-                    num3 = num3 + 1
-                    check1.append(tri(num1))
-                    check2.append(pent(num2))
-                    check3.append(hex(num3))
-                for r in range(1,100000):
-                    print(r)
-                    if check1[r] in check2:
-                        print("Found!")
-                        if check1[r] in check3:
-                            print(check1[r])
-                            break    
             </code></pre>
+            <p>The code above is a function that will output a triangluar if you put "num1" as n(the "n" that is used in the question page). Similarly, I made two more function for pentagonal numbers and hexagonal numbers.</p>
+            <pre><code>
+                for i in range (1, 100000):
+                num = num + 1
+                num1 = num1 + 1
+                num2 = num2 + 1
+                num3 = num3 + 1
+                check1.append(tri(num1))
+                check2.append(pent(num2))
+                check3.append(hex(num3))            
+            </code></pre>
+            <p>The code above will make a list of triangular, pentagonal and hexagonal, that is one hundred thousand long and n as "1". I did this because I thought there would definetly be the same numbers if made the list one hundred thousand items long.</p>
+            <pre><code>
+                for r in range (1,100000):
+                print(r)
+                if check1[r] in check2:
+                    print("First found")
+                    if check1[r] in check3:
+                        print("Second found")
+                        print(check1[r])
+                        break
+            </code></pre>
+            <p>The code above uses the in function to search if there is any of the same numbers in the lists. Then the code will output the first number that is all a triangular, pentagonal and hexagonal.</p>
             <p>For this code, I made three functions to make it easier for me. In the code, I first calculated all triangular, pentagonal, and hexagonal numbers up to one hundred thousand. Then used the "in" function to check if there is the same triangular number in the two lists.</p>
-            <h4>What I Learnt</h4>
-            <p>With this question, I learned to approach problems by breaking the code into smaller parts. For example, when I ran the code initially, it didn’t work. To resolve this, I divided the code into chunks and tested each one individually. I discovered that the hexagonal function was the issue, and after fixing it, the code worked as expected.</p>
-            <p>In Project Euler, I worked on problems like number 5, 10, 31, and others with my programming teacher outside of school. I find Project Euler to be an excellent platform for improving my algorithmic, logical thinking, and problem-solving skills.</p>
+            <h4>Problems I Faced In This Question</h4>
+            <p>When I runned the code initialy, it didn't work as expected: the code kept on going and didn't stop.</p>
+            <h4>How I Solved The Problem In This Question</h4>
+            <p>To solve this project, I divided the code into chunks and tested each one individually. I discovered that the hexagonal function was the issue, and after fixing it, the code worked as expected.</p>
+            <h4>What I Learnt From This Question</h4>
+            <p>With this question, I learned to approach problems by breaking the code into smaller parts.</p>
+            <h4>What I Learnt From This Project As A Whole</h4>
+            <p>Overall, I got used to algorithms and improved on my algorithmic, logical thinking, and problem-solving skills. I also learnt other skills through this project, just like the earlier example. Other specific examples of what I learnt are the Big O notation and dynamic programming. I am still working on the other questions in the site and I have ambtions to continue this.</p>
         </div>
         <div class="project">
             <h3>Project 4: Scratch</h3>
