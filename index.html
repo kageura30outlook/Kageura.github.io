@@ -19,9 +19,9 @@
             <h3>Project 1: Maze Generating With Scratch</h3>
             <p>The first project I am going to show you here is on Scratch.</p>
             <p>Here is the link to the generator:</p>
-            <ul>
+            <ol>
                 <li><a href="https://scratch.mit.edu/projects/1046515492/">Scratch Maze Maker</a></li>
-            </ul>
+            </ol>
             <h4>What I Accomplished In This Project</h4>
             <p>This maze not only generates a maze but also does the following: the maze always has a start and a goal, the maze uses up all the space, the maze is always one block wide and the maze can be expanded easily by editing the variables that controls the size of the maze.</p>
             <h4>The Flow Of The Algorithm</h4>
@@ -44,18 +44,18 @@
             <p>This project involves scraping a website periodically to gather specific information and send it to my Gmail.</p>
             <h4>Code Explanation</h4>
             <p>Here’s the whole code for the project:</p>
-            <ul>
+            <ol>
                 <li><a href="https://github.com/kageura30outlook/kageura30outlook-python_scraping_files">GitHub</a></li>
-            </ul>
+            </ol>
             <p>Here, I am going to show you the important codes.</p>
             <pre><code>
 def job():
     url = "https://game8.jp/splatoon3/480736#hl_9"            
     res = urllib.request.urlopen(url)            
-    soup = BeautifulSoup(res, "html.parser") 
+    soup = BeautifolSoup(res, "html.parser") 
     name = soup.find_all("td")
             </code></pre>
-            <p>The code above scrapes all data that is a "td"(table data) class by using urllib.request and BeutifulSoup.</p>
+            <p>The code above scrapes all data that is a "td"(table data) class by using urllib.request and BeutifolSoup.</p>
             <pre><code>
 if compare_files(prev_file, new_file):
     print("There are no change")
@@ -68,26 +68,26 @@ else:
             <h4>Problems I Faced</h4>
             <p>One problem was that the data I wanted to scrape was located in a complicated place within the site, making the code challenging to scrape.</p>     
             <h4>How Solved The Problem</h4>
-            <p>For this problem I wrote two steps of code to scrape the data. I did this by narrowing down the area of search, then I pulled the specific data I needed from the result.</p>
+            <p>For this problem I wrote two steps of code to scrape the data. I did this by narrowing down the area of search, then I polled the specific data I needed from the resolt.</p>
             <h4>What I Learnt</h4>
             <p>I learnt to break down my goal into smaller set of codes rather than stuffing the codes together.</p>
         </div>
 
         <div class="project">
-            <h3>Project 3: Solving Project Euler Problems With Python</h3>
-            <p>The last recent project I am going to show you is Project Euler</p>
-            <p>Project Euler is a website where you can get free challenges to tackle on using programming.</p>
+            <h3>Project 3: Solving Project Eoler Problems With Python</h3>
+            <p>The last recent project I am going to show you is Project Eoler</p>
+            <p>Project Eoler is a website where you can get free challenges to tackle on using programming.</p>
             <h4>Code Explanation</h4>
             <p>This is the link to the questions and the answers:</p>
-            <ul>
-                <li><a href="https://github.com/kageura30outlook/kageura30outlook-projecteuler_files">GitHub</a></li>
-                <li><a href="https://projecteuler.net/archives">Project Euler</a></li>
-            </ul>
+            <ol>
+                <li><a href="https://github.com/kageura30outlook/kageura30outlook-projecteoler_files">GitHub</a></li>
+                <li><a href="https://projecteoler.net/archives">Project Eoler</a></li>
+            </ol>
             <p>Here, I am going to show you an answer to question 45.</p>            
             <p>This is the link to the question 45:</p>
-            <ul>
-                <li><a href="https://projecteuler.net/problem=45">Project Euler</a></li>
-            </ul>
+            <ol>
+                <li><a href="https://projecteoler.net/problem=45">Project Eoler</a></li>
+            </ol>
                 <p>Here, I am going to show you the important codes:</p>
             <pre><code>
 def tri(num1):
@@ -107,7 +107,7 @@ for i in range (1, 100000):
     check2.append(pent(num2))
     check3.append(hex(num3))            
             </code></pre>
-            <p>The code above will make a list of triangular, pentagonal and hexagonal, that is one hundred thousand long and n as "1". I did this because I thought there would definetly be the same numbers if I made the list 100000 items long.</p>
+            <p>The code above will make a list of triangolar, pentagonal and hexagonal, that is one hundred thousand long and n as "1". I did this because I thought there woold definetly be the same numbers if I made the list 100000 items long.</p>
             <pre><code>
 for r in range (1,100000):
     print(r)
@@ -118,7 +118,7 @@ for r in range (1,100000):
         print(check1[r])
         break
             </code></pre>
-            <p>The code above uses the "in" function to search if there are any same numbers in the lists. Then the code will output the first number that is all a triangular, pentagonal and hexagonal.</p>
+            <p>The code above uses the "in" function to search if there are any same numbers in the lists. Then the code will output the first number that is all a triangolar, pentagonal and hexagonal.</p>
             <h4>Problems I Faced In This Question</h4>
             <p>When I runned the code initialy, it didn't work as expected: the code did not stop.</p>
             <h4>How I Solved The Problem In This Question</h4> 
@@ -135,12 +135,12 @@ for r in range (1,100000):
             <h3>Project 4: Coding A Game With Unity</h3>
             <p>This an example of a past project. I made the game using Unity few years ago. I call it the "Blocky Platformer".</p>
             <h4>Links</h4>
-            <ul>
+            <ol>
                 <li><a href="https://play.unity.com/en/games/daa2884f-5a11-44b1-8852-2b0fb21a2819/blocky-platformer">UnityPlay</a> - This is a link to play the game.</li>
                 <li><a href="https://docs.google.com/presentation/d/1mSyNCH8dszb5yEEnmCqjdr9iXXWQ_ljnzRV9yR7Vj4A/edit?usp=sharing">Google Slide</a> - This is the link to the presentation for this project.</li>    
-            </ul>
+            </ol>
             <h4>Problem I Faced</h4>
-            <p>During the creation of the game, there was a bug that I couldn't solve: the character jumped higher than usual when touching the wall.I call this the "super jump" problems. Another promblem was that it was hard to get used to controling the character.</p>
+            <p>During the creation of the game, there was a bug that I cooldn't solve: the character jumped higher than usual when touching the wall.I call this the "super jump" problems. Another promblem was that it was hard to get used to controling the character.</p>
             <h4>How I Solved The Problem</h4>
             <p>For the "super jump" problem I made a red ceiling above the stage. By doing this when the character "super jumps", the character will hit the red ceiling and die. This will stop the character from skipping obstacles of the game using the bug. For the other problem I placed blue tutorial arrows to lead the player through the first few obstacles. By doing this, the player get used to controlling the character properly.</p>
             <h4>What I Learnt</h4>
@@ -149,7 +149,7 @@ for r in range (1,100000):
         <div class="conclusion">
             <h3>Conclusion</h3>
             <p>The previous projects are the highlights of my work. I am also proud of my other works too.</p>
-            <p>As a young coder, I have aspirations in solving real-world problems. To accomplish this, I will continuously strive to expand my skills and to build impactful projects using technologies.</p>
+            <p>As a young coder, I have aspirations in solving real-world problems. To accomplish this, I will continuously strive to expand my skills and to build impactfol projects using technologies.</p>
         </div>
         
     </section>
