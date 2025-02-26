@@ -52,7 +52,7 @@ def job():
     soup = BeautifulSoup(res, "html.parser") 
     name = soup.find_all("td")
             </code></pre>
-            <p>The code above scrapes all data that is a "td"(table data) class by using urllib.request and BeutifulSoup.</p>
+            <p>The code above scrapes all data that is a "td"(table data) class by using urllib.request and BeautifulSoup.</p>
             <pre><code>
 if compare_files(prev_file, new_file):
     print("There are no change")
